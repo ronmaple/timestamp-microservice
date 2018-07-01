@@ -24,12 +24,12 @@ app.get("/api/timestamp/:time", (req, res) => {
     console.log('isNum');
     convertedTime = toNatural(rawTime);
     console.log(convertedTime);
-    res.send(convertedTime);
+    res.json(convertedTime);
   } else {
     console.log('else');
     convertedTime = toUnix(rawTime);
     console.log('convertedTime', convertedTime);
-    res.send({ "unix": convertedTime });
+    res.json({ "unix": convertedTime });
   }
   
   // res.send(typeof rawTime);
