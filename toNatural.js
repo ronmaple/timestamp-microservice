@@ -1,5 +1,5 @@
 // naturalTime() => change Unix to natural date
-const naturalTime = (unixTime) => {
+exports.toNatural = (unixTime) => {
   console.log('unixTime: ' + unixTime);
   console.log('typeof unixTime: ' + typeof unixTime);
   let t = new Date(unixTime * 1000);

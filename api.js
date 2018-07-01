@@ -1,6 +1,9 @@
 const express = require('express');
 const path = require('path');
 
+const toUnix = require('./toUnix.js');
+const toNatural = require('./toNatural.js');
+
 const app = express();
 
 // app.use(express.static(path.join(__dirname, 'public')));
@@ -12,26 +15,24 @@ app.get("/", function (req, res) {
 });
 
 app.get("/:time", (req, res) => {
-  let time = req.params.time;
-  res.send(time);
-//   console.log('accessed');
-//   let rawTime = req.params.time;
-//   let convertedTime;
+  console.log('accessed');
+  let rawTime = req.params.time;
+  let convertedTime;
   
-//   console.log(rawTime);
-//   // isNum => check if all values are numeric string
-//   let isNum = /^\d+$/.test(rawTime);
-//   console.log(isNum);
+  console.log('rawTime', rawTime);
+  // isNum => check if all values are numeric string
+  let isNum = /^\d+$/.test(rawTime);
+  console.log('isNum', isNum);
   
-//   if (isNum) {
-//     convertedTime = naturalTime(parseInt(rawTime));
-//     res.send(convertedTime);
-//   } else {
-//     convertedTime = unixTime(rawTime);
-//     res.send(rawTime);
-//   }
+  // if (isNum) {
+  //   convertedTime;
+  //   res.send(convertedTime);
+  // } else {
+  //   convertedTime;
+  //   res.send(rawTime);
+  // }
   
-  // res.send(typeof rawTime);
+  res.send(typeof rawTime);
 });
 
 // listen for requests :)
