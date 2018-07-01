@@ -33,10 +33,10 @@ app.get("/:time", (req, res) => {
     console.log('else');
     convertedTime = toUnix(rawTime);
     console.log('convertedTime', convertedTime);
-    // res.send(rawTime);
+    res.send({ "unix": convertedTime });
   }
   
-  res.send(typeof rawTime);
+  // res.send(typeof rawTime);
 });
 
 // listen for requests :)
