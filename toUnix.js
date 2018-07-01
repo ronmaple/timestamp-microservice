@@ -2,7 +2,7 @@
 module.exports = (naturalTime) => {
   console.log('unixTime, time: ' + naturalTime);
   let t = new Date(naturalTime);
-  let unix = t.getTime();
+  let unix = t.UTC();
   console.log('t: ' + t);
 }
 
