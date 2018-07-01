@@ -3,10 +3,12 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));
 
 app.get("/", function (req, res) {
-  res.sendFile(process.cwd() + '/views/index.html');
+  res.sendFile(path.join(__dirname, 'views/index.html'));
+  //process.cwd() + '/views/index.html'
 });
 
 app.get("/:time", (req, res) => {
