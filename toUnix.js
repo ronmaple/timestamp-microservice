@@ -1,7 +1,8 @@
 // unixTime() => change natural date to Unix
-exports.toUnix = (naturalTime) => {
+module.exports = (naturalTime) => {
   console.log('unixTime, time: ' + naturalTime);
   let t = new Date(naturalTime);
+  let unix = t.getTime();
   console.log('t: ' + t);
 }
 

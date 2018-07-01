@@ -5,7 +5,7 @@ module.exports = (unixTime) => {
   console.log('typeof unixTime', typeof unixTime);
   
   // let t = new Date(unixTime * 1000);
-  let t = new Date(unixTime);
+  let t = new Date(parseInt(unixTime));
   console.log('t', t);
   //t.setSeconds(unixTime);
   let year = t.getFullYear();
