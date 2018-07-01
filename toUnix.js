@@ -5,7 +5,10 @@ module.exports = (naturalTime) => {
   let unix = t.getTime() / 1000;
   console.log('unix', unix);
   
-  return unix;
+  return {
+    unix,
+    utc: t.toUTCString()
+  };
 }
 
 // checkInt() => check if all the parameter inputs are integers

@@ -12,23 +12,19 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, 'views/index.html'));
 });
 
-app.get("/api/timestamp/:time", (req, res) => {
+app.get("/api/timestamp/:date_string?", (req, res) => {
   console.log('accessed');
-  let rawTime = req.params.time;
+  let raw = req.params.date_string || new Date();
+  console.log(raw);
   let convertedTime;
 
-  let isNum = /^\d+$/.test(rawTime);
-  console.log('isNum', isNum);
+  let isNum = /^\d+$/.test(raw);
   
   if (isNum) {
-    console.log('isNum');
-    convertedTime = toNatural(rawTime);
-    console.log(convertedTime);
+    convertedTime = toNatural(raw);
     res.json(convertedTime);
   } else {
-    console.log('else');
-    convertedTime = toUnix(rawTime);
-    console.log('convertedTime', convertedTime);
+    convertedTime = toUnix(raw);
     res.json({ "unix": convertedTime });
   }
   
