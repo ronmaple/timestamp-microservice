@@ -1,9 +1,12 @@
 // naturalTime() => change Unix to natural date
-exports.toNatural = (unixTime) => {
-  console.log('unixTime: ' + unixTime);
-  console.log('typeof unixTime: ' + typeof unixTime);
-  let t = new Date(unixTime * 1000);
-  console.log(t);
+module.exports = (unixTime) => {
+  console.log('toNatural working');
+  console.log('unixTime', unixTime);
+  console.log('typeof unixTime', typeof unixTime);
+  
+  // let t = new Date(unixTime * 1000);
+  let t = new Date(unixTime);
+  console.log('t', t);
   //t.setSeconds(unixTime);
   let year = t.getFullYear();
   console.log('year: ' + year);

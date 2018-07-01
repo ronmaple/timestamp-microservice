@@ -24,13 +24,14 @@ app.get("/:time", (req, res) => {
   let isNum = /^\d+$/.test(rawTime);
   console.log('isNum', isNum);
   
-  // if (isNum) {
-  //   convertedTime;
-  //   res.send(convertedTime);
-  // } else {
-  //   convertedTime;
-  //   res.send(rawTime);
-  // }
+  if (isNum) {
+    convertedTime = toNatural(rawTime);
+    console.log(convertedTime);
+    // res.send(convertedTime);
+  } else {
+    convertedTime = toUnix(rawTime);
+    // res.send(rawTime);
+  }
   
   res.send(typeof rawTime);
 });
